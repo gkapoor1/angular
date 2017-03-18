@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Angular Magento Integration</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-route.js"></script>
+</head>
+<body ng-app="myApp">
+  <nav class="navbar">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">Quick Shopping</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li class="active"><a href="#/">Home</a></li>
+      <li><a href="#mobile">Mobile Phones</a></li>
+      <li><a href="#laptop">Laptops</a></li>
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+      <li><a href="#"><span class="glyphicon glyphicon-shopping-cart"></span> Cart</a></li>
+      <li><a href="#signup"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+      <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+    </ul>
+  </div>
+</nav>
+  <div class="jumbotron text-center">
+  <h1>Quick Shopping</h1>
+  <p>Search....Add to Cart....Checkout....Quickly!</p> 
+</div>
+<div ng-view>
+</div>
+<script>
+var app = angular.module("myApp", ["ngRoute"]);
+app.config(function($routeProvider) {
+    $routeProvider
+    .when("/", {
+        templateUrl : "main.html"
+    })
+    .when("/mobile", {
+        templateUrl : "mobile.html"
+    })
+    .when("/laptop", {
+        templateUrl : "laptop.html"
+    })
+    .when("/signup", {
+        templateUrl : "signup.html"
+    });
+});
+</script>  
+</body>
+</html>
