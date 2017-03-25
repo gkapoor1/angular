@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+<body ng-app="myApp" ng-controller="myCtrl">
+
+<p>{{ message }}</p>
+
+<script type="text/javascript">
+	var app = angular.module('myApp', []);
+	app.controller('myCtrl', function($scope, $http) {
+        $http({
+        	url: 'http://gktwlab.com/magento/index.php/rest/V1/integration/admin/token',
+        	method: "POST",
+        	data: {'username': 'Magento' , 'password': 'Magento2017'}
+        })
+    .then(function(response) {
+            $scope.message = response.data;
+            var token = $scope.message;
+            console.log(token);
+            $http({
+                url: 'http://gktwlab.com/magento/index.php/rest/V1/products/',
+                method: "GET",
+               // data: {'sku': '1'},
+                headers: {'Authorization': 'Bearer '+token}
+            }).then(function(response){
+                $scope.message = response.data;
+            })
+    }, 
+    function(response) { // optional
+            $scope.message = "Please Try Again";
+    });
+	});
+</script>
+
+</body>
+</html>
