@@ -9,22 +9,38 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 <body>
-<div class="container-fluid">
+<div class="container-fluid" ng-controller="signup_controller">
+ <div class="row">
+ <div class="col-sm-6">
+   <h1>Sign Up for Quick Shopping</h1>
+   <p style="color: red">{{error_message}}</p>
+ </div>
+ </div>
   <form class="form">
     <div class="form-group">
-      <label for="name">Name:</label>
-      <input type="text" class="form-control" id="name" placeholder="Name">
+      <label for="first_name">First Name:</label>
+      <input type="text" class="form-control" id="first_name" placeholder="First Name" ng-model="first_name">
+    </div>
+    <div class="form-group">
+      <label for="last_name">Last Name:</label>
+      <input type="text" class="form-control" id="last_name" placeholder="Last Name" ng-model="last_name" size= "50">
     </div>
     <div class="form-group">
       <label for="email">Email:</label>
-      <input type="email" class="form-control" id="email" placeholder="Email">
+      <input type="email" class="form-control" id="email" placeholder="Email" ng-model="email">
     </div>
     <div class="form-group">
-      <label for="email">Password:</label>
-      <input type="password" class="form-control" id="email" placeholder="Password">
+      <label for="password">Password:</label>
+      <input type="password" class="form-control" id="password" placeholder="Password" ng-model="password">
     </div>
-    <button type="submit" class="btn btn-default">Submit</button>
+    <div class="form-group">
+      <label for="confirm_passoword">Confirm Password:</label>
+      <input type="password" class="form-control" id="confirm_password" placeholder="Confirm Password" ng-model="confirm_password">
+    </div>
+    <button type="submit" class="btn btn-default" ng-click="submit()">Submit</button>
   </form>
+  <script type="text/javascript">
+  </script>
 </div>
 </body>
 </html>

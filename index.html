@@ -54,6 +54,24 @@ app.config(function($routeProvider) {
         templateUrl : "login.html"
     });    
 });
+app.controller('signup_controller', function($scope,) {
+$scope.first_name = "John";
+$scope.last_name = "Doe";
+$scope.submit = function(){
+  var first_name = $scope.first_name;
+  var last_name = $scope.last_name;
+  var email = $scope.email;
+  var password = $scope.password;
+  var confirm_password = $scope.confirm_password;
+if(password != confirm_password) {
+  $scope.error_message = "Password doesn't match with confirm password";
+}
+else {
+
+}
+}
+});
+
 </script>  
 </body>
 </html>
