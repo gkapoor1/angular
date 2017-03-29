@@ -1,0 +1,70 @@
+{
+  "customer": {
+    "id": 0,
+    "groupId": 0,
+    "defaultBilling": "string",
+    "defaultShipping": "string",
+    "confirmation": "string",
+    "createdAt": "string",
+    "updatedAt": "string",
+    "createdIn": "string",
+    "dob": "string",
+    "email": email,
+    "firstname": first_name,
+    "lastname": last_name,
+    "middlename": "string",
+    "prefix": "string",
+    "suffix": "string",
+    "gender": 0,
+    "storeId": 0,
+    "taxvat": "string",
+    "websiteId": 0,
+    "addresses": [
+      {
+        "id": 0,
+        "customerId": 0,
+        "region": {
+          "regionCode": "string",
+          "region": "string",
+          "regionId": 0,
+          "extensionAttributes": {}
+        },
+        "regionId": 0,
+        "countryId": "string",
+        "street": [
+          "string"
+        ],
+        "company": "string",
+        "telephone": "string",
+        "fax": "string",
+        "postcode": "string",
+        "city": "string",
+        "firstname": "string",
+        "lastname": "string",
+        "middlename": "string",
+        "prefix": "string",
+        "suffix": "string",
+        "vatId": "string",
+        "defaultShipping": true,
+        "defaultBilling": true,
+        "extensionAttributes": {},
+        "customAttributes": [
+          {
+            "attributeCode": "string",
+            "value": "string"
+          }
+        ]
+      }
+    ],
+    "disableAutoGroupChange": 0,
+    "extensionAttributes": {},
+    "customAttributes": [
+      {
+        "attributeCode": "string",
+        "value": "string"
+      }
+    ]
+  },
+  "password": password,
+  "redirectUrl": "http://major.gktwlab.com"
+}
