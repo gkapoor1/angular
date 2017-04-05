@@ -14,10 +14,11 @@
   <nav class="navbar">
   <div class="container-fluid">
     <div class="navbar-header">
-      <a class="navbar-brand" href="#">Quick Shopping</a>
+      <a class="navbar-brand" href="#/">Quick Shopping</a>
     </div>
     <ul class="nav navbar-nav">
       <li class="active"><a href="#/">Home</a></li>
+      <li><a href="#search">Search</a></li>
       <li><a href="#mobile">Mobile Phones</a></li>
       <li><a href="#laptop">Laptops</a></li>
     </ul>
@@ -28,12 +29,13 @@
     </ul>
   </div>
 </nav>
-  <div class="jumbotron text-center">
+<div class="jumbotron text-center" style="background-image: url('banner.jpg'); background-position: right top;" >
   <h1>Quick Shopping</h1>
-  <p>Search....Add to Cart....Checkout....Quickly!</p> 
+  <p>Search->Add to Cart->Checkout->Quickly</p> 
 </div>
-<div ng-view>
+<div ng-view >
 </div>
+<br>
 <script>
 var app = angular.module("myApp", ["ngRoute"]);
 app.config(function($routeProvider) {
@@ -49,6 +51,9 @@ app.config(function($routeProvider) {
     })
     .when("/signup", {
         templateUrl : "signup.html"
+    })
+    .when("/search", {
+        templateUrl : "search.html"
     })
     .when("/login", {
         templateUrl : "login.html"
