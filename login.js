@@ -1,4 +1,4 @@
-//Controller for sign up page.
+//Controller for login page.
 app.controller('login_controller', function($scope,$http) {
 $scope.submitLogin = function(){
   var email = $scope.loginEmail;
@@ -26,4 +26,5 @@ $scope.submitLogin = function(){
                       });     
                 });
  
+}
 });
