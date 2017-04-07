@@ -22,10 +22,14 @@
       <li><a href="#mobile">Mobile Phones</a></li>
       <li><a href="#laptop">Laptops</a></li>
     </ul>
-    <ul class="nav navbar-nav navbar-right">
-      <li><a href="#cart"><span class="glyphicon glyphicon-shopping-cart"></span> Cart</a></li>
-      <li><a href="#signup"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-      <li><a href="#login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+    <ul class="nav navbar-nav navbar-right" ng-controller="login_controller" ng-init="isLoggedIn()">
+      <li ><a href="#cart"><span class="glyphicon glyphicon-shopping-cart"></span> Cart</a></li>
+      <li ng-if="!isLoggedIn()"><a href="#signup"><span class="glyphicon glyphicon-user"></span>Sign Up</a></li>
+      <li ng-if="isLoggedIn()"><a href="#signup"><span class="glyphicon glyphicon-user"></span>Hello {{currentUserName}}</a></li>
+      <li ng-if="!isLoggedIn()"><a href="#login"><span class="glyphicon glyphicon-log-in"></span>Login</a></li>
+      <li ng-if="isLoggedIn()"><a href="#login"><span class="glyphicon glyphicon-log-in"></span>Logout</a></li>
+
+
     </ul>
   </div>
 </nav>
@@ -38,10 +42,10 @@
 <br>
 <script src="route.js"></script>
 <script src="signup.js"></script>
-<script src="login.js"></script>
 <script src="mobile.js"></script>
 <script src="laptop.js"></script>
 <script src="product.js"></script>
+<script src="login.js"></script>
 
 
 

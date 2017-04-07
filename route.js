@@ -1,4 +1,6 @@
 var app = angular.module("myApp", ["ngRoute"]);
+localStorage.removeItem('currentUser');
+
 app.config(function($routeProvider) {
     $routeProvider
     .when("/", {
