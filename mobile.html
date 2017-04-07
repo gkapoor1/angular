@@ -9,6 +9,7 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 <body>
+<div ng-controller="mobile_controller" ng-init="init_mobile()">
 <div class="container-fluid">
   <h1>Mobile Phones</h1>
 </div>
@@ -28,22 +29,46 @@
 <div class="container-fluid">
   <div class="row">
     <div class="col-sm-4">
-      <img src="https://d3nevzfk7ii3be.cloudfront.net/igi/ipv5OG2NckM3DfE2.large" height="300" width="250">
-      <h3>iPhone 7</h3>
-      <h4>Rs 52,999</h4>
+      <img ng-src="{{ mobile_1_image_url }}" height="300" width="250">
+      <h3>{{ mobile_1_name }}</h3>
+      <h4>Rs {{ mobile_1_price }}</h4>
+      <button type="button" class="btn btn-primary">Add to Cart</button>
     </div>
     <div class="col-sm-4">
-      <img src="https://9to5mac.files.wordpress.com/2014/09/iphone6-select-2014.png?w=782" height="300" width="250">
-      <h3>iPhone 6</h3>
-      <h4>Rs 31,999</h4>
+      <img ng-src="{{mobile_2_image_url}}" height="300" width="250">
+      <h3>{{ mobile_2_name }}</h3>
+      <h4>Rs {{ mobile_2_price }}</h4>
+      <button type="button" class="btn btn-primary">Add to Cart</button>
     </div>
     <div class="col-sm-4">
-      <img src="https://www.androidcentral.com/sites/androidcentral.com/files/styles/xlarge/public/article_images/2016/11/oneplus-3t-press-render-03.jpg?itok=fvatsfBV" height="300" width="250">
-      <h3>One Plus 3T</h3>
-      <h4>Rs 28,999</h4>
+      <img ng-src="{{mobile_3_image_url}}" height="300" width="250">
+      <h3>{{mobile_3_name}}</h3>
+      <h4>Rs {{mobile_3_price}}</h4>
+      <button type="button" class="btn btn-primary">Add to Cart</button>
+    </div>
+  </div>
+  <br>
+  <div class="row">
+    <div class="col-sm-4">
+      <img ng-src="{{ mobile_4_image_url }}" height="300" width="250">
+      <h3>{{ mobile_4_name }}</h3>
+      <h4>Rs {{ mobile_4_price }}</h4>
+      <button type="button" class="btn btn-primary">Add to Cart</button>
+    </div>
+    <div class="col-sm-4">
+      <img ng-src="{{mobile_5_image_url}}" height="300" width="250">
+      <h3>{{ mobile_5_name }}</h3>
+      <h4>Rs {{ mobile_5_price }}</h4>
+      <button type="button" class="btn btn-primary">Add to Cart</button>
+    </div>
+    <div class="col-sm-4">
+      <img ng-src="{{mobile_6_image_url}}" height="300" width="250">
+      <h3>{{mobile_6_name}}</h3>
+      <h4>Rs {{mobile_6_price}}</h4>
+      <button type="button" class="btn btn-primary">Add to Cart</button>
     </div>
     </div>  
-  </div>
+</div>
 </div>
 </body>
 </html>

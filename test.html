@@ -18,7 +18,7 @@
             var token = $scope.message;
             console.log(token);
             $http({
-                url: 'http://magento.gktwlab.com/index.php/rest/V1/products/',
+                url: 'http://magento.gktwlab.com/index.php/rest/V1/products/1',
                 method: "GET",
                // data: {'sku': '1'},
                 headers: {'Authorization': 'Bearer '+token}

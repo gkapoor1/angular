@@ -9,13 +9,14 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 <body>
+<div ng-controller="laptop_controller" ng-init="init_laptop()">
 <div class="container-fluid">
   <h1>Laptops</h1>
 </div>
 <div class="container-fluid">
   <form class="form-inline">
     <div class="form-group">
-      <input type="text" class="form-control" id="searchText" placeholder="Search Mobile">
+      <input type="text" class="form-control" id="searchText" placeholder="Search laptop">
     </div>
     <div class="form-group">
       <select class="form-control" id="category">
@@ -28,22 +29,46 @@
 <div class="container-fluid">
   <div class="row">
     <div class="col-sm-4">
-      <img src="https://store.storeimages.cdn-apple.com/4974/as-images.apple.com/is/image/AppleInc/aos/published/images/m/ac/macbook/air/macbook-air-gallery5-2014?wid=1292&hei=766&fmt=jpeg&qlt=95&op_sharpen=0&resMode=bicub&op_usm=0.5,0.5,0,0&iccEmbed=0&layer=comp&.v=1476297407895" height="150" width="350">
-      <h3>Macbook Air</h3>
-      <h4>Rs 55,999</h4>
+      <img ng-src="{{ laptop_1_image_url }}" height="300" width="250">
+      <h3>{{ laptop_1_name }}</h3>
+      <h4>Rs {{ laptop_1_price }}</h4>
+      <button type="button" class="btn btn-primary">Add to Cart</button>
     </div>
     <div class="col-sm-4">
-      <img src="https://dri1.img.digitalrivercontent.net/Storefront/Company/msintl/images/English/en-INTL-Surface-Pro4-Refresh-SU3-00001/PDP/en-INTL-PDP-Surface-Pro-4-2016-Refresh-SU3-00001-F4-desktop.jpg" height="150" width="350">
-      <h3>Surface Book</h3>
-      <h4>Rs 71,999</h4>
+      <img ng-src="{{laptop_2_image_url}}" height="300" width="250">
+      <h3>{{ laptop_2_name }}</h3>
+      <h4>Rs {{ laptop_2_price }}</h4>
+      <button type="button" class="btn btn-primary">Add to Cart</button>
     </div>
     <div class="col-sm-4">
-      <img src="http://i.dell.com/sites/imagecontent/products/PublishingImages/xps-13-9350-laptop/laptop-xps-13-9350-pdp-polaris-04.jpg" height="150" width="350">
-      <h3>Dell XPS 13</h3>
-      <h4>Rs 1,28,999</h4>
+      <img ng-src="{{laptop_3_image_url}}" height="300" width="250">
+      <h3>{{laptop_3_name}}</h3>
+      <h4>Rs {{laptop_3_price}}</h4>
+      <button type="button" class="btn btn-primary">Add to Cart</button>
+    </div>
+  </div>
+  <br>
+  <div class="row">
+    <div class="col-sm-4">
+      <img ng-src="{{ laptop_4_image_url }}" height="300" width="250">
+      <h3>{{ laptop_4_name }}</h3>
+      <h4>Rs {{ laptop_4_price }}</h4>
+      <button type="button" class="btn btn-primary">Add to Cart</button>
+    </div>
+    <div class="col-sm-4">
+      <img ng-src="{{laptop_5_image_url}}" height="300" width="250">
+      <h3>{{ laptop_5_name }}</h3>
+      <h4>Rs {{ laptop_5_price }}</h4>
+      <button type="button" class="btn btn-primary">Add to Cart</button>
+    </div>
+    <div class="col-sm-4">
+      <img ng-src="{{laptop_6_image_url}}" height="300" width="250">
+      <h3>{{laptop_6_name}}</h3>
+      <h4>Rs {{laptop_6_price}}</h4>
+      <button type="button" class="btn btn-primary">Add to Cart</button>
     </div>
     </div>  
-  </div>
+</div>
 </div>
 </body>
 </html>
