@@ -1,5 +1,5 @@
 //Controller for sign up page.
-app.controller('login_controller', function($scope,$http) {
+app.controller('login_controller', function($scope,$http,$location) {
   $scope.isLoggedIn=function(){
     var currentUser = JSON.parse(localStorage.getItem('currentUser'));
 
@@ -44,5 +44,7 @@ $scope.submitLogin = function(){
 
                       });     
                 });
+ 
+        $location.path("/");
  }
 });
