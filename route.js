@@ -16,7 +16,18 @@ app.config(function($routeProvider) {
     .when("/search", {
         templateUrl : "search.html"
     })
+    .when("/product/:productID", {
+        templateUrl : "product.html"
+    })
     .when("/login", {
         templateUrl : "login.html"
     });    
 });
+
+angular.module('myApp.filters', []).
+  filter('htmlToPlaintext', function() {
+    return function(text) {
+      return  text ? String(text).replace(/<[^>]+>/gm, '') : '';
+    };
+  }
+);
