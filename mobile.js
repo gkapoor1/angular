@@ -87,7 +87,7 @@ $scope.addToCart = function(pid)
     pid = pid.toString();
     //console.log(pid);
     $http({
-      url: "http://localhost/angular/session_get.php",
+      url: "http://major.gktwlab.com/session_get.php",
       method: "GET",
     }).then(function(response){
         uid = response.data.userid;
@@ -121,7 +121,7 @@ $scope.addToCart = function(pid)
 $scope.addToCart = function(pid) {
     pid = pid.toString();  
     $http({
-      url: "http://localhost/angular/session_get.php",
+      url: "http://major.gktwlab.com/session_get.php",
       method: "GET",
     }).then(function(response){
         uid = response.data.userid;

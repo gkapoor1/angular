@@ -30,7 +30,7 @@ app.controller('login_controller', function($scope,$http,$location) {
   $scope.currentUserName = "";
 
   $http({
-    url: "http://localhost/angular/session_get.php",
+    url: "http://major.gktwlab.com/session_get.php",
     method: "GET",
   }).then(function(response){
     if(true)
@@ -48,7 +48,7 @@ app.controller('login_controller', function($scope,$http,$location) {
 }
 $scope.isSessionSet = function(){
      $http({
-    url: "http://localhost/angular/session_get.php",
+    url: "http://major.gktwlab.com/session_get.php",
     method: "GET",
   }).then(function(response){
     console.log(response.data);
@@ -74,7 +74,7 @@ $scope.submitLogin = function(){
       }).then(function(response){
           customerName=response.data.firstname;
           $http({
-            url: "http://localhost/angular/session_set.php",
+            url: "http://major.gktwlab.com/session_set.php",
             method: "POST",
             data: {'userid': response.data.id , 'fname': response.data.firstname , 'lname': response.data.lastname , 'email': email , 'token': customerToken}
           }).then(function(response){
