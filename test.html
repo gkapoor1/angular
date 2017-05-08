@@ -18,12 +18,16 @@
             var token = $scope.message;
             console.log(token);
             $http({
-                url: 'http://magento.gktwlab.com/index.php/rest/V1/products/1',
-                method: "GET",
+                url: 'http://magento.gktwlab.com/index.php/rest/V1/carts/1/items/0',
+                method: "PUT",
+                data: {"cartItem": {"itemId": 0, "qouteId": "1" , "sku": "1" , "qty" : 1}},
+             //  data: {"cartItem":{"qty" : 1 , "cartId" : "1"}},
                // data: {'sku': '1'},
+
                 headers: {'Authorization': 'Bearer '+token}
             }).then(function(response){
-                $scope.message = response.data;
+                console.log(response);
+               // $scope.message = response.data;
             })
     }, 
     function(response) { // optional

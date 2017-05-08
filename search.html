@@ -9,10 +9,10 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 <body>
-<div class="container-fluid">
+<div class="container-fluid" ng-controller="search_controller" ng-init="init_search()"> 
   <form class="form-inline">
     <div class="form-group">
-      <input type="text" class="form-control" id="searchText" placeholder="Search Product">
+      <input type="text" class="form-control" id="searchText" placeholder="Search Product" ng-model="searchText">
     </div>
     <div class="form-group">
       <select class="form-control" id="category">
@@ -22,7 +22,8 @@
         <option>Tablets</option>
       </select>
     </div>
-    <button type="submit" class="btn btn-default">Submit</button>
+    <button type="submit" class="btn btn-default" ng-click="press_search()">Submit</button><br><br>
+    <p>{{ search_result }}</p>
   </form>
 </div>
 </body>

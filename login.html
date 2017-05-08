@@ -10,13 +10,15 @@
 </head>
 <body>
 <div class="container-fluid" ng-controller="login_controller">
+  <h1>Login</h1>
+  <p style="color: red">{{login_error_message}}</p>
   <form class="form">
     <div class="form-group">
       <label for="email">Email:</label>
       <input type="email" class="form-control" id="email" placeholder="Email" ng-model="loginEmail" required>
     </div>
     <div class="form-group">
-      <label for="email">Password:</label>
+      <label for="password">Password:</label>
       <input type="password" class="form-control" id="email" placeholder="Password" ng-model="loginPassword" required>
     </div>
     <input value="Login" type="submit" class="btn btn-default" ng-click="submitLogin()">

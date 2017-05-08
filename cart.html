@@ -1,0 +1,8 @@
+<div ng-controller="cart_controller" ng-init="init_cart()">
+<h1>{{cart_error_message}}</h1>
+<div ng-repeat="x in cart_message">
+	<h1>{{x.name}}</h1>
+	<h1>{{x.price}}</h1>
+	<img width="100px" height="100px" src="{{x.image}}">
+</div>
+</div>

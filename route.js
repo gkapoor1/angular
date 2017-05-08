@@ -1,5 +1,4 @@
 var app = angular.module("myApp", ["ngRoute"]);
-localStorage.removeItem('currentUser');
 
 app.config(function($routeProvider) {
     $routeProvider
@@ -18,6 +17,9 @@ app.config(function($routeProvider) {
     .when("/search", {
         templateUrl : "search.html"
     })
+    .when("/cart", {
+        templateUrl : "cart.html"
+    })
     .when("/product/:productID", {
         templateUrl : "product.html"
     })
@@ -25,11 +27,3 @@ app.config(function($routeProvider) {
         templateUrl : "login.html"
     });    
 });
-
-angular.module('myApp.filters', []).
-  filter('htmlToPlaintext', function() {
-    return function(text) {
-      return  text ? String(text).replace(/<[^>]+>/gm, '') : '';
-    };
-  }
-);
