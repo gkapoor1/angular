@@ -2,7 +2,7 @@
 app.controller('cart_controller', function($scope, $http, $timeout){
 	$scope.init_cart = function(){
 		$http({
-      		url: "http://localhost/angular/cart_get.php",
+      		url: "http://major.gktwlab.com/cart_get.php",
       		method: "GET",
     	}).then(function(response){
     		console.log(response);

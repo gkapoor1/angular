@@ -130,7 +130,7 @@ $scope.addToCart = function(pid) {
         else
         {
             $http({
-                url: "http://localhost/angular/cart_set.php",
+                url: "http://major.gktwlab.com/cart_set.php",
                 method: "POST",
                 data: {"userid": uid, "sku": pid}
             }).then(function(response){
