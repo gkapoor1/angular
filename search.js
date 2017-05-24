@@ -1,5 +1,6 @@
 app.controller('search_controller', function($scope, $http){
   $scope.init_search = function(){
+    $scope.searchResult = "No products";
 
   }		
   $scope.press_search = function(){
