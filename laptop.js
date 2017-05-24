@@ -82,4 +82,26 @@ $scope.init_laptop = function()
     });
 
 }
+$scope.addToCart = function(pid) {
+    pid = pid.toString();  
+    $http({
+      url: "http://major.gktwlab.com/session_get.php",
+      method: "GET",
+    }).then(function(response){
+        uid = response.data.userid;
+        if(uid !== parseInt(uid, 10))
+            window.alert("Login / Sign Up Buy Products");
+        else
+        {
+            $http({
+                url: "http://major.gktwlab.com/cart_set.php",
+                method: "POST",
+                data: {"userid": uid, "sku": pid}
+            }).then(function(response){
+                window.alert("Product Added to Cart");
+            });
+        }
+
+});
+}
 });
