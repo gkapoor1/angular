@@ -11,6 +11,9 @@ app.config(function($routeProvider) {
     .when("/laptop", {
         templateUrl : "laptop.html"
     })
+    .when("/checkout", {
+        templateUrl : "checkout.html"
+    })
     .when("/signup", {
         templateUrl : "signup.html"
     })

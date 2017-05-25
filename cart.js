@@ -6,9 +6,11 @@ app.controller('cart_controller', function($scope, $http, $timeout){
       		method: "GET",
     	}).then(function(response){
     		console.log(response);
+            $scope.checkoutButton = false;
     		if(response.data == 0)
     		{
     			$scope.cart_error_message = "No Product in Cart";
+                $scope.checkoutButton = false;
     		}
     		else
     		{
@@ -35,6 +37,7 @@ app.controller('cart_controller', function($scope, $http, $timeout){
             		}
             		//$scope.cart_message = items;
             	});  
+                $scope.checkoutButton = true;
     		}
 		});
 	}
