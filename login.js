@@ -103,7 +103,8 @@ $scope.submitLogin = function(){
           $scope.hello_menu = true;
           $scope.logout_menu = true;
           $scope.login_menu = false;
-          $scope.initialMenu()
+          $scope.initialMenu();
+          
           $location.path("/");
 
 
