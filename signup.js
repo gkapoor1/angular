@@ -24,6 +24,11 @@ $scope.submit = function(){
                 headers: {'Authorization': 'Bearer '+token}
                 }).then(function(response){
                  $scope.error_message = "Account Created . You can now login to start Shopping.";
+                 $scope.first_name = "";
+                 $scope.last_name = "";
+                 $scope.email = "";
+                 $scope.password = "";
+                 $scope.confirm_password = "";
                 },  
                 function(response){
                 $scope.error_message = response.data.message;
