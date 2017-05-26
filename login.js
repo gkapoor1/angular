@@ -1,14 +1,30 @@
 //Controller for sign up page.
-app.controller('login_controller', function($scope,$http,$location) {
+app.controller('login_controller', function($scope,$http,$location,$window) {
 
   $scope.initialMenu = function(){
+    var tokens= $window.localStorage.getItem("token");
+    if(!tokens){
+      console.log("cem"+tokens)
     $scope.signup_menu = true;
     $scope.hello_menu = false;
     $scope.logout_menu = false;
-    $scope.login_menu = true;
+    $scope.login_menu = true;}
+    else
+    {
+      console.log("idk"+tokens)
+      $scope.currentUserName=tokens
+     // $scope.currentUserName="dadadad";
+      $scope.signup_menu = false;
+     $scope.hello_menu = true;
+     $scope.logout_menu = true;
+     $scope.login_menu = false;
+  
+    }
   }
+
   $scope.login_menu = function()
   {
+    $scope.currentUserName=tokens
     $scope.signup_menu = false;
     $scope.hello_menu = true;
     $scope.logout_menu = true;
@@ -73,6 +89,8 @@ $scope.submitLogin = function(){
         headers: {'Authorization': 'Bearer '+customerToken} 
       }).then(function(response){
           customerName=response.data.firstname;
+                    $window.localStorage.setItem("token",customerName)
+
           $http({
             url: "http://major.gktwlab.com/session_set.php",
             method: "POST",
@@ -85,11 +103,13 @@ $scope.submitLogin = function(){
           $scope.hello_menu = true;
           $scope.logout_menu = true;
           $scope.login_menu = false;
+          $scope.initialMenu()
           $location.path("/");
+
+
         })
     },function(response){
         $scope.login_error_message = "Wrong Email ID or Password";
     });
 }
 });
-      
