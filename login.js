@@ -1,5 +1,5 @@
 //Controller for sign up page.
-app.controller('login_controller', function($scope,$http,$location,$window) {
+app.controller('login_controller', function($scope,$http,$location,$window,$route) {
 
   $scope.initialMenu = function(){
     var tokens= $window.localStorage.getItem("token");
@@ -12,13 +12,14 @@ app.controller('login_controller', function($scope,$http,$location,$window) {
     else
     {
       console.log("idk"+tokens)
-      $scope.currentUserName=tokens
+          $scope.currentUserName=tokens
+
      // $scope.currentUserName="dadadad";
       $scope.signup_menu = false;
-     $scope.hello_menu = true;
-     $scope.logout_menu = true;
-     $scope.login_menu = false;
-  
+    $scope.hello_menu = true;
+    $scope.logout_menu = true;
+    $scope.login_menu = false;
+  //
     }
   }
 
@@ -103,8 +104,9 @@ $scope.submitLogin = function(){
           $scope.hello_menu = true;
           $scope.logout_menu = true;
           $scope.login_menu = false;
-          $scope.initialMenu();
-          
+          $scope.initialMenu()
+    $window.location.reload()
+
           $location.path("/");
 
 
@@ -114,3 +116,4 @@ $scope.submitLogin = function(){
     });
 }
 });
+      
